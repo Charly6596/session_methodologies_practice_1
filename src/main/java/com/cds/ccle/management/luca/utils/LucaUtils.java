@@ -44,14 +44,13 @@ public class LucaUtils {
 	}
 		
 	public static boolean isValidEmailAddress(String email) {
-	   boolean result = true;
 	   try {
 	      InternetAddress emailAddr = new InternetAddress(email);
 	      emailAddr.validate();
+          return true;
 	   } catch (AddressException ex) {
-	      result = false;
+	      return false;
 	   }
-	   return result;
 	}
 	
     public static <T> List<T> removeListDuplicates(List<T> list) { 
